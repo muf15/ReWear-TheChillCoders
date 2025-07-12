@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { User } from "../models/userModel.js";
 
 const createToken = (userId) => {
-  return jwt.sign({ userId }, process.env.JWT_SECRET, {
+  return jwt.sign({ userId: user._id, role: user.role }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN || "3d",
   });
 };
@@ -25,7 +25,7 @@ export const signup = async (req, res) => {
       password: hashedPassword,
     });
 
-    const token = createToken(user._id);
+    const token = createToken(user._id, user.role);
     res.cookie("jwt", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
