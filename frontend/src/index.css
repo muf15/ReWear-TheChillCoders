@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1.2s ease-in;
+  }
+  .animate-fade-in-down {
+    animation: fadeInDown 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+}
