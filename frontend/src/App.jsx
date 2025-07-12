@@ -7,6 +7,7 @@ import Admindashboard from './Components/Dashboard/Admindashboard.jsx'
 import LoginScreen from './Components/Navbar/LoginScreen.jsx'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignUpScreen from './Components/Navbar/SignUpScreen.jsx'
+import Products from './pages/Products.jsx'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
         <Route path="/user" element={<Dashboard />} />
         <Route path="/admin" element={<Admindashboard />} />
