@@ -9,7 +9,7 @@ const WomenNewArrivals = () => {
       name: "Asymmetric Denim Skirt",
       price: "$138.00",
       brand: "Future Classics",
-      image: "/api/placeholder/300/400",
+      image: "../src/assets/Womenarrival/women1.jpg",
       colors: ["blue"],
       sizes: ["XS", "S", "M", "L"]
     },
@@ -18,7 +18,7 @@ const WomenNewArrivals = () => {
       name: "Asymmetric Denim Skirt Sand",
       price: "$138.00",
       brand: "Future Classics",
-      image: "/api/placeholder/300/400",
+      image: "../src/assets/Womenarrival/women1.jpg",
       colors: ["beige"],
       sizes: ["XS", "S", "M", "L"]
     },
@@ -27,7 +27,7 @@ const WomenNewArrivals = () => {
       name: "Asymmetric Slit Dress",
       price: "$188.00",
       brand: "Future Classics",
-      image: "/api/placeholder/300/400",
+      image: "../src/assets/Womenarrival/women1.jpg",
       colors: ["sage", "pink"],
       sizes: ["XS", "S", "M", "L"]
     },

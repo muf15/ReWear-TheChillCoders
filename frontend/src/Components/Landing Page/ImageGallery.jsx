@@ -2,11 +2,11 @@ import React, { useRef, useEffect } from "react";
 
 // Add your image URLs here (use import or direct public URLs)
 const images = [
-  "/assets/gallery1.jpg",
-  "/assets/gallery2.jpg",
-  "/assets/gallery3.jpg",
-  "/assets/gallery4.jpg",
-  "/assets/gallery5.jpg",
+  "../src/assets/image1.jpg",
+  "../src/assets/image2.jpg",
+  "../src/assets/image3.jpg",
+  "../src/assets/image4.jpg",
+  "../src/assets/image1.jpg",
 ];
 
 export default function ImageGallery() {

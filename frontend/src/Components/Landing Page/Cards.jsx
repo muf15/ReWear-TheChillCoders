@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import React from 'react';
+
 const Cards = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
@@ -12,7 +13,8 @@ const Cards = () => {
       price: "$138.00",
       brand: "Future Classics",
       colors: ["sage", "brown"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women1.jpg"
     },
     {
       id: 2,
@@ -20,7 +22,8 @@ const Cards = () => {
       price: "$248.00",
       brand: "Future Classics",
       colors: ["white", "cream"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women2.jpg"
     },
     {
       id: 3,
@@ -28,7 +31,8 @@ const Cards = () => {
       price: "$138.00",
       brand: "Future Classics",
       colors: ["blue"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women3.jpg"
     },
     {
       id: 4,
@@ -36,7 +40,8 @@ const Cards = () => {
       price: "$138.00",
       brand: "Future Classics",
       colors: ["blue"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women4.jpg"
     },
     {
       id: 5,
@@ -44,7 +49,8 @@ const Cards = () => {
       price: "$165.00",
       brand: "Future Classics",
       colors: ["white", "beige"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women5.jpg"
     },
     {
       id: 6,
@@ -52,7 +58,8 @@ const Cards = () => {
       price: "$195.00",
       brand: "Future Classics",
       colors: ["sage", "navy"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women6.jpg"
     },
     {
       id: 7,
@@ -60,7 +67,8 @@ const Cards = () => {
       price: "$148.00",
       brand: "Future Classics",
       colors: ["black", "cream"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women1.jpg"
     },
     {
       id: 8,
@@ -68,7 +76,8 @@ const Cards = () => {
       price: "$275.00",
       brand: "Future Classics",
       colors: ["tweed", "navy"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women1.jpg"
     },
     {
       id: 9,
@@ -76,7 +85,8 @@ const Cards = () => {
       price: "$125.00",
       brand: "Future Classics",
       colors: ["cream", "sage"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women1.jpg"
     },
     {
       id: 10,
@@ -84,7 +94,8 @@ const Cards = () => {
       price: "$155.00",
       brand: "Future Classics",
       colors: ["navy", "brown"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women1.jpg"
     },
     {
       id: 11,
@@ -92,7 +103,8 @@ const Cards = () => {
       price: "$98.00",
       brand: "Future Classics",
       colors: ["ivory", "blush"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women1.jpg"
     },
     {
       id: 12,
@@ -100,13 +112,14 @@ const Cards = () => {
       price: "$225.00",
       brand: "Future Classics",
       colors: ["black", "navy"],
-      sizes: ["XS", "S", "M", "L"]
+      sizes: ["XS", "S", "M", "L"],
+      imageUrl: "../src/assets/Womenarrival/women1.jpg"
     }
   ];
 
   const pages = [];
-  for (let i = 0; i < products.length; i += 12) {
-    pages.push(products.slice(i, i + 12));
+  for (let i = 0; i < products.length; i += 6) {
+    pages.push(products.slice(i, i + 6));
   }
 
   useEffect(() => {
@@ -136,96 +149,44 @@ const Cards = () => {
   };
 
   const ProductCard = ({ product }) => (
-    <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 group">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-pink-100">
       <div className="relative">
-        <span className="absolute top-3 left-3 text-xs text-gray-500 bg-white px-2 py-1 rounded-full shadow-sm z-10">
+        <span className="absolute top-4 left-4 text-xs text-pink-600 bg-pink-50 px-3 py-1 rounded-full shadow-sm z-10 font-medium">
           New arrival
         </span>
-        <div className="w-full aspect-[3/4] bg-gray-50 flex items-center justify-center overflow-hidden">
-          {/* Product 1 - Trousers */}
-          {product.id === 1 && (
-            <div className="w-32 h-64 bg-stone-400 relative transform group-hover:scale-105 transition-transform duration-300">
-              <div className="absolute inset-x-4 top-8 bottom-8 bg-stone-300 rounded-t-lg"></div>
-              <div className="absolute inset-x-4 top-24 h-px bg-stone-500"></div>
-              <div className="absolute left-1/2 top-24 w-px h-32 bg-stone-500 transform -translate-x-1/2"></div>
+        <div className="w-full aspect-[3/4] bg-gradient-to-br from-pink-50 to-rose-50 flex items-center justify-center overflow-hidden">
+          <img 
+            src={product.imageUrl} 
+            alt={product.name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onError={(e) => {
+              e.target.style.display = 'none';
+              e.target.nextSibling.style.display = 'flex';
+            }}
+          />
+          <div className="hidden w-full h-full bg-gradient-to-br from-pink-100 to-rose-100 items-center justify-center">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-pink-200 rounded-full flex items-center justify-center mx-auto mb-3">
+                <svg className="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <p className="text-sm text-pink-500 font-medium">{product.name}</p>
             </div>
-          )}
-          
-          {/* Product 2 - Blazer */}
-          {product.id === 2 && (
-            <div className="w-36 h-56 bg-gray-50 border-2 border-gray-200 relative transform group-hover:scale-105 transition-transform duration-300">
-              <div className="absolute top-4 left-4 right-4 h-8 bg-gray-100 rounded-t-lg"></div>
-              <div className="absolute top-12 left-6 w-6 h-6 bg-gray-200 rounded-full"></div>
-              <div className="absolute top-20 left-4 right-4 h-4 bg-gray-100"></div>
-              <div className="absolute bottom-4 left-4 right-4 h-6 bg-gray-100 rounded-b-lg"></div>
-            </div>
-          )}
-          
-          {/* Product 3 - Denim Top */}
-          {product.id === 3 && (
-            <div className="w-32 h-48 bg-blue-400 relative transform group-hover:scale-105 transition-transform duration-300">
-              <div className="absolute inset-2 bg-blue-300 rounded-lg"></div>
-              <div className="absolute bottom-8 left-2 right-2 h-16 bg-blue-500 rounded-b-lg"></div>
-              <div className="absolute inset-2 bg-blue-200 bg-opacity-30 rounded-lg"></div>
-              <div className="absolute inset-4 border-2 border-blue-200 rounded-lg border-dashed"></div>
-            </div>
-          )}
-          
-          {/* Additional products with varied designs */}
-          {product.id === 4 && (
-            <div className="w-28 h-56 bg-blue-300 relative transform rotate-12 group-hover:rotate-6 group-hover:scale-105 transition-all duration-300">
-              <div className="absolute inset-2 bg-blue-400 rounded-lg"></div>
-              <div className="absolute bottom-0 left-0 right-0 h-6 bg-blue-500 rounded-b-lg"></div>
-            </div>
-          )}
-          
-          {product.id === 5 && (
-            <div className="w-40 h-52 bg-gray-50 border border-gray-200 relative transform group-hover:scale-105 transition-transform duration-300">
-              <div className="absolute top-2 left-2 right-2 h-12 bg-gray-100 rounded-t-lg"></div>
-              <div className="absolute top-6 left-4 right-4 h-2 bg-gray-200"></div>
-            </div>
-          )}
-          
-          {product.id === 6 && (
-            <div className="w-32 h-60 bg-green-200 relative transform group-hover:scale-105 transition-transform duration-300">
-              <div className="absolute inset-2 bg-green-300 rounded-lg"></div>
-              <div className="absolute bottom-4 left-2 right-2 h-20 bg-green-400 rounded-b-lg"></div>
-              <div className="absolute inset-x-6 top-8 bottom-24 bg-green-100"></div>
-            </div>
-          )}
-          
-          {[7, 8, 9, 10, 11, 12].includes(product.id) && (
-            <div className={`w-32 h-56 relative transform group-hover:scale-105 transition-transform duration-300 ${
-              product.id === 7 ? 'bg-gray-800' :
-              product.id === 8 ? 'bg-amber-100 border-2 border-amber-200' :
-              product.id === 9 ? 'bg-stone-200' :
-              product.id === 10 ? 'bg-blue-900' :
-              product.id === 11 ? 'bg-pink-50 border border-pink-200' :
-              'bg-gray-900'
-            }`}>
-              <div className={`absolute inset-2 rounded-lg ${
-                product.id === 7 ? 'bg-gray-700' :
-                product.id === 8 ? 'bg-amber-50' :
-                product.id === 9 ? 'bg-stone-100' :
-                product.id === 10 ? 'bg-blue-800' :
-                product.id === 11 ? 'bg-pink-100' :
-                'bg-gray-800'
-              }`}></div>
-            </div>
-          )}
+          </div>
         </div>
       </div>
       
-      <div className="p-4">
-        <p className="text-sm text-gray-500 mb-1">{product.brand}</p>
-        <h3 className="text-sm font-medium text-gray-900 mb-2">{product.name}</h3>
-        <p className="text-sm font-medium text-gray-900 mb-3">{product.price}</p>
+      <div className="p-6">
+        <p className="text-sm text-pink-400 mb-1 font-medium">{product.brand}</p>
+        <h3 className="text-lg font-semibold text-gray-800 mb-2 leading-tight">{product.name}</h3>
+        <p className="text-xl font-bold text-pink-600 mb-4">{product.price}</p>
         
         <div className="flex items-center justify-between">
-          <div className="flex space-x-1">
+          <div className="flex space-x-2">
             {product.colors.map((color, index) => (
-              <div key={index} className="w-5 h-5 rounded-full border border-gray-200 flex items-center justify-center">
-                <div className={`w-3 h-3 rounded-full ${
+              <div key={index} className="w-6 h-6 rounded-full border-2 border-pink-100 flex items-center justify-center shadow-sm">
+                <div className={`w-4 h-4 rounded-full ${
                   color === 'blue' ? 'bg-blue-400' :
                   color === 'beige' ? 'bg-stone-400' :
                   color === 'sage' ? 'bg-green-300' :
@@ -243,9 +204,9 @@ const Cards = () => {
             ))}
           </div>
           
-          <div className="flex space-x-1 text-xs text-gray-500">
+          <div className="flex space-x-2 text-sm text-pink-500">
             {product.sizes.map((size, index) => (
-              <span key={index} className="px-1">{size}</span>
+              <span key={index} className="px-2 py-1 bg-pink-50 rounded-lg font-medium">{size}</span>
             ))}
           </div>
         </div>
@@ -254,32 +215,34 @@ const Cards = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex items-center justify-between mb-8">
+    <div className="min-h-screen bg-gradient-to-br from-pink-25 via-rose-25 to-pink-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex items-center justify-between mb-12">
           <button 
             onClick={handlePrevious}
-            className="p-3 rounded-full hover:bg-gray-200 transition-colors duration-200 disabled:opacity-50"
+            className="p-4 rounded-full bg-white hover:bg-pink-50 transition-all duration-300 disabled:opacity-50 shadow-lg border border-pink-100"
             disabled={pages.length <= 1}
           >
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           
           <div className="text-center">
-            <h1 className="text-3xl font-light text-gray-900 mb-2">Women New Arrivals</h1>
-            <button className="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200">
+            <h1 className="text-4xl font-bold text-gray-800 mb-3 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
+              Women New Arrivals
+            </h1>
+            <button className="text-pink-600 hover:text-pink-700 transition-colors duration-200 font-medium underline decoration-pink-300 hover:decoration-pink-500">
               View all
             </button>
           </div>
           
           <button 
             onClick={handleNext}
-            className="p-3 rounded-full hover:bg-gray-200 transition-colors duration-200 disabled:opacity-50"
+            className="p-4 rounded-full bg-white hover:bg-pink-50 transition-all duration-300 disabled:opacity-50 shadow-lg border border-pink-100"
             disabled={pages.length <= 1}
           >
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -287,12 +250,12 @@ const Cards = () => {
         
         <div className="relative overflow-hidden">
           <div 
-            className="flex transition-transform duration-500 ease-in-out"
-            
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentPage * 100}%)` }}
           >
             {pages.map((page, pageIndex) => (
               <div key={pageIndex} className="w-full flex-shrink-0">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                   {page.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
@@ -303,7 +266,7 @@ const Cards = () => {
         </div>
         
         {pages.length > 1 && (
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-12 space-x-3">
             {pages.map((_, index) => (
               <button
                 key={index}
@@ -312,8 +275,10 @@ const Cards = () => {
                   setCurrentPage(index);
                   setTimeout(() => setIsAutoScrolling(true), 3000);
                 }}
-                className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                  index === currentPage ? 'bg-gray-800' : 'bg-gray-300 hover:bg-gray-400'
+                className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                  index === currentPage 
+                    ? 'bg-pink-500 scale-110 shadow-lg' 
+                    : 'bg-pink-200 hover:bg-pink-300'
                 }`}
               />
             ))}
