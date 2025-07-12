@@ -1,0 +1,9 @@
+flask
+flask-cors
+anthropic
+torch
+torchvision
+transformers
+pillow
+spacy
+dotenv
