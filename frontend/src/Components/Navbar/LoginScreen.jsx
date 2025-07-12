@@ -1,19 +1,45 @@
 import { useState } from 'react';
 import React from 'react';
+import { api } from '../../axios.config';
+import { useNavigate } from "react-router-dom";
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
+  const navigate = useNavigate();
   const handleLogin = async () => {
-    setIsLoading(true);
-    // Simulate login process
-    setTimeout(() => {
-      setIsLoading(false);
-      alert('Login successful!');
-    }, 1500);
-  };
+  setIsLoading(true);
+  try {
+    const response = await api.post(
+      "/auth/login",
+      { email, password },
+      { withCredentials: true } // Needed to allow cookies from backend
+    );
+
+    const user = response.data.user;
+    alert(`Welcome back, ${user.name}!`);
+    if (user.role === "user") {
+          navigate ( "/user");  
+        } 
+        else {
+          navigate("/admin");
+        }
+
+    // Optionally save user data to localStorage/context
+    // localStorage.setItem("user", JSON.stringify(user));
+
+    // Redirect to dashboard or home
+    // navigate("/dashboard");
+
+  } catch (error) {
+    console.error("Login failed:", error);
+    alert(error.response?.data?.message || "Login failed");
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   const handleSocialLogin = (provider) => {
    
