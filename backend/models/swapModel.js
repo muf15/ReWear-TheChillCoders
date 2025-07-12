@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const SwapSchema = new mongoose.Schema(
   {
     itemId: { type: mongoose.Schema.Types.ObjectId, ref: "Item", required: true },
+    offeredItemId: { type: mongoose.Schema.Types.ObjectId, ref: "Item"},
     requestedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
     ownerId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
     swapType: {
