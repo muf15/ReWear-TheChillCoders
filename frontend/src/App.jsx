@@ -19,6 +19,7 @@ const App = () => {
         <Route path="/admin" element={<Admindashboard />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/signup" element={<SignUpScreen />} />
+        <Route path="/allproduct" element={<SignUpScreen />} />
       </Routes>
     </Router>
   );
