@@ -6,7 +6,9 @@ import WomenNewArrivals from './Components/Landing Page/WomenArrivals.jsx'
 import Cards from './Components/Landing Page/Cards.jsx'
 import VideoPlayerInterface from './Components/Landing Page/VideoPlayerInterface.jsx'
 import ProductDetailPage from './Components/Itemlisting/ProductDetailPage.jsx'
-import Dashboard from './Components/Userdashboard/Dashboard.jsx'
+import Dashboard from './Components/Dashboard/Dashboard.jsx'
+import Admindashboard from './Components/Dashboard/Admindashboard.jsx'
+import LoginScreen from './Components/Navbar/LoginScreen.jsx'
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
      <VideoPlayerInterface/>
      <ProductDetailPage/>
      <Dashboard/>
+     <Admindashboard/>
+     <LoginScreen/>
     
 
     </div>
