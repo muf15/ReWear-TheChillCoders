@@ -17,11 +17,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173", // Correct syntax
+    origin: process.env.FRONTEND_BASEURL || "http://localhost:5173",
     credentials: true,
   })
 );
-app.use("/api", Routes);
+app.use("/api/v1", Routes);
 
 
 
@@ -31,7 +31,7 @@ app.use("/api", Routes);
 
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, ()=>{
+app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}`);
 });
 
